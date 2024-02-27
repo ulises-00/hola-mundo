@@ -1,0 +1,83 @@
+@startuml
+
+package ObjetosE{
+    class ObjetoE
+    class Pelota
+    class Cama
+    class Casa
+    class Habitacion
+}
+
+package ObjetosI{
+    class ObjetoI
+    class Felicidad
+    class Emocion
+    class Salud
+}
+
+class Mascota{
+    + comer()
+    - salud : int
+    
+}
+class Alimento
+class Salud
+class Animal
+class Nombre
+class Felicidad
+class Cola 
+class Patas
+class Pelota
+class Cama 
+class Habitacion
+Class Plato
+class Color{
+    + negro()
+    + blanco()
+}
+class Edad
+class Raza
+class Emocion
+class ObjetoI{
+    + INTERNO()
+}
+class ObjetoE{
+    + EXTERNO()
+}
+
+Mascota "1" o-- "1" Alimento 
+Mascota --|> Animal
+Cola "1" *-- "*" Mascota
+Color "1,2" *-- "1" Mascota
+Patas "2,4" *-- "1" Mascota
+Pelota "1,2" o-- "1" Mascota
+Plato "2" o-- "1" Mascota
+Felicidad "1" *-- "1" Mascota
+Nombre "1,2" o-- "1" Mascota
+Cama "1" o-- "1" Mascota
+Salud "*" *-- "1" Mascota
+Habitacion "1,2" o-- "1" Mascota
+Raza "1,?" *-- "1" Mascota
+Cama "1,2" *-- "1,2" Habitacion
+Edad "1" *-- "1" Mascota
+Felicidad "1" --|> "1" Emocion
+Mascota "*" *-- "1" Emocion
+Alimento "1,3" o-- "1,2" Plato
+Habitacion "1,2" o-- "1" Pelota
+Color "*" *-- "1" Cama
+Color "1" *-- "1" Plato
+Color "*" *-- "1" Pelota
+Color "*" *-- "1" Habitacion
+
+Cama --|> ObjetoE
+Alimento --|> ObjetoE
+Nombre --|> ObjetoE
+
+Salud --|> ObjetoI
+Felicidad --|> ObjetoI
+Emocion --|> ObjetoI
+
+
+@enduml
+
+
