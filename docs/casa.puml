@@ -1,0 +1,30 @@
+@startuml
+
+class Casa
+class Habitacion
+class Sala
+class Cosina
+class Baño
+class Patio
+class Cochera
+class Luz
+
+class Puerta
+
+Habitacion "2,6" *-- "1" Casa
+Sala "1" *-- "1" Casa
+Cosina "1" *-- "1" Casa
+Baño "2,4" *-- "1" Casa
+Patio "1" *-- "1" Casa
+Cochera "1" *-- "1" Casa
+Luz "*" *-- "1" Casa
+
+Puerta "1" o-- "1" Baño
+Puerta "1,3" o-- "1" Habitacion
+Puerta "1" o-- "1" Patio
+Puerta "1" o-- "1" Cochera
+
+
+
+
+@enduml
